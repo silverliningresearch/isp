@@ -31,18 +31,18 @@
             }
             //console.log("full address: ", results[0]);  
 
-            document.getElementById("selectedAddress").innerHTML = "Your selection: " + locality +  ", " + city  + ", " + postal_code;
+            document.getElementById("selectedAddress").innerHTML = "Your selection: " + results[0].formatted_address;
             var address = document.getElementById("selectedAddress").innerHTML;
             if (current_question == 5) //start
             {
-              api.fn.answers({journey_start_point: results[0]});
-              api.fn.answers({urlVar20: address});
+              api.fn.answers({journey_start_point: results[0].formatted_address});
+              api.fn.answers({urlVar20: results[0]});
             }
 
             if (current_question == 7) //stop
             {
-              api.fn.answers({journey_end_point: results[0]});
-              api.fn.answers({urlVar19: address});
+              api.fn.answers({journey_end_point: results[0].formatted_address});
+              api.fn.answers({urlVar19: results[0]});
             }
           }
           }
@@ -56,7 +56,9 @@
     x.style.display = "none";
     var y = document.getElementById("pac-input");
     y.style.display = "none";
+    y.innerHTML = "";
     document.getElementById("selectedAddress").style.display = "none";
+    document.getElementById("selectedAddress").innerHTML = "";
     //Modify CSS to display Google Map
     var rt_container = document.querySelectorAll(".rt-container");
     var slt_page_container = document.querySelectorAll(".slt-page-container");
