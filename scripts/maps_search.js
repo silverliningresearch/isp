@@ -1,4 +1,6 @@
   var current_question = 0;
+  var map;
+
   function parseInfor(latLng){
     var geocoder = new google.maps.Geocoder();
     var content  = "";
@@ -57,6 +59,7 @@
     var y = document.getElementById("pac-input");
     y.style.display = "none";
     y.innerHTML = "";
+    map.setZoom(9);
     document.getElementById("selectedAddress").style.display = "none";
     document.getElementById("selectedAddress").innerHTML = "";
     //Modify CSS to display Google Map
@@ -97,7 +100,8 @@
   function initAutocomplete() {
     const myLatlng = { lat: 55.77433, lng: 12.48658};
 
-    const map = new google.maps.Map(document.getElementById("map"), {
+    //const map = new google.maps.Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {      
     center: myLatlng,
     zoom: 9,
     mapTypeId: "roadmap",
