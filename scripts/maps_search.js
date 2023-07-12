@@ -31,7 +31,7 @@
             }
             //console.log("full address: ", results[0]);  
 
-            document.getElementById("selectedAddress").innerHTML = "Your selection: " + results[0].formatted_address;
+            document.getElementById("selectedAddress").innerHTML = "Dit valg: " + results[0].formatted_address;
             var address = document.getElementById("selectedAddress").innerHTML;
             if (current_question == 5) //start
             {
