@@ -59,7 +59,7 @@
     var y = document.getElementById("pac-input");
     y.style.display = "none";
     y.innerHTML = "";
-    map.setZoom(9);
+    map.setZoom(8);
     document.getElementById("selectedAddress").style.display = "none";
     document.getElementById("selectedAddress").innerHTML = "";
     //Modify CSS to display Google Map
@@ -98,12 +98,12 @@
   }
 
   function initAutocomplete() {
-    const myLatlng = { lat: 55.77433, lng: 12.48658};
+    const myLatlng = { lat: 55.444901, lng: 11.788920};
 
     //const map = new google.maps.Map(document.getElementById("map"), {
     map = new google.maps.Map(document.getElementById("map"), {      
     center: myLatlng,
-    zoom: 9,
+    zoom: 8,
     mapTypeId: "roadmap",
   });
   // Create the search box and link it to the UI element.
