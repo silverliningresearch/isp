@@ -1,6 +1,6 @@
   var current_question = 0;
   var map;
-  var searchBox;
+  
   function parseInfor(latLng){
     var geocoder = new google.maps.Geocoder();
     var content  = "";
