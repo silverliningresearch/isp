@@ -1,6 +1,6 @@
   var current_question = 0;
   var map;
-
+  var searchBox;
   function parseInfor(latLng){
     var geocoder = new google.maps.Geocoder();
     var content  = "";
@@ -62,6 +62,7 @@
     map.setZoom(8);
     document.getElementById("selectedAddress").style.display = "none";
     document.getElementById("selectedAddress").innerHTML = "";
+    document.getElementById("pac-input").value = "";
     //Modify CSS to display Google Map
     var rt_container = document.querySelectorAll(".rt-container");
     var slt_page_container = document.querySelectorAll(".slt-page-container");
@@ -122,7 +123,6 @@
   // more details for that place.
   searchBox.addListener("places_changed", () => {
     const places = searchBox.getPlaces();
-
     if (places.length == 0) {
       return;
     }
