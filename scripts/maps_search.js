@@ -38,13 +38,13 @@
             if (current_question == 5) //start
             {
               api.fn.answers({journey_start_point: results[0].formatted_address});
-              api.fn.answers({urlVar20: latLng});
+              api.fn.answers({urlVar19: JSON.stringify(latLng)});
             }
 
             if (current_question == 7) //stop
             {
               api.fn.answers({journey_end_point: results[0].formatted_address});
-              api.fn.answers({urlVar19: latLng});
+              api.fn.answers({urlVar20: JSON.stringify(latLng)});
             }
           }
           }
